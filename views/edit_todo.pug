@@ -1,0 +1,18 @@
+#ModalTodoFormView.modal.fade
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                h1.modal-title Create To-Do card
+            .modal-body
+                form(role='form', onsubmit="submitAddTODO(event)")
+                    .form-group
+                        label.control-label Name
+                        div
+                            input.form-control.input-lg(id ='toDoName', type='text', name='name', value='')
+                    .form-group
+                        label.control-label Text
+                        div
+                            input.form-control.input-lg(id ='toDoText', type='textarea', name='text', value='')
+                    .form-group
+                        a.card-link(href='#') Edit
+                        a.card-link(href='#', onclick="deleteToDo(event)") Delete

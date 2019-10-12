@@ -1,0 +1,23 @@
+doctype html
+head
+    include static/bootstrap.pug
+    include static/js.pug
+    include create_todo.pug
+body
+    include static/nav_bar.pug
+    #container.col
+        p Your memories
+        block content
+            .row
+                each todoItem in todoes
+                    div.col-md-6.col-xl-3.notes
+                        .card(onclick="openCard(event)", data-id=todoItem._id.toString() )
+                            h4.card-header=todoItem.Name
+                            .card-body
+                                p.card-subtitle.mb-2.text-muted=todoItem.Text
+                                //a.card-link(href='#') Edit
+                                //a.card-link(id=todoItem._id.toString(), href='#', onclick="deleteToDo(event)") Delete
+
+
+    include static/foot.pug
+

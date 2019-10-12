@@ -1,0 +1,21 @@
+#ModalTodoForm.modal.fade
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                h1.modal-title Create To-Do card
+            .modal-body
+                form(role='form', onsubmit="submitAddTODO(event)")
+                    .form-group
+                        label.control-label Name
+                        div
+                            input.form-control.input-lg(id ='toDoName', type='text', name='name', value='')
+                    .form-group
+                        textarea#form8.md-textarea.form-control.grey-text(type='text', name='text', rows='4')
+                        label(data-error='wrong', data-success='right', for='form8') Your message
+                    .form-group
+                        label(for='exampleFormControlFile1') Example file input
+                        input#exampleFormControlFile1.form-control-file(type='file')
+                    .form-group
+                        div
+                            button.btn.btn-success(type='submit')
+                                | Add ToDo
