@@ -1,0 +1,18 @@
+#ModalListFormView.modal.fade
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                h1.modal-title Create List
+            .modal-body
+                form(role='form', onsubmit="submitAddList(event)")
+                    .form-group
+                        label.control-label Name
+                        div
+                            input.form-control.input-lg(id ='listName', type='text', name='name', value='')
+                    .form-group
+                        label.control-label Field
+                        div
+                            input.form-control.input-lg(id ='listField', type='textarea', name='text', value='')
+                    .form-group
+                        a.card-link(href='#') Edit
+                        a.card-link(href='#', onclick="deleteList(event)") Delete

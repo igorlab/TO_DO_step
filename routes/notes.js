@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Todo = require('../models/todo');
 const monogoose = require('mongoose');
+
 // /notes
 module.exports = function () {
     router.get('/:clientId', function (req, res) {

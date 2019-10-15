@@ -1,0 +1,23 @@
+#ModalListForm.modal.fade
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                h1.modal-title Create List
+            .modal-body
+                form(role='form', onsubmit="submitAddList(event)")
+                    .form-group
+                        label.control-label Name
+                        div
+                            input.form-control.input-lg(id ='listName', type='text', name='name', value='')
+                    .form-group( id='tasksList')
+                    .form-group
+                        label.control-label Task
+                            div
+                                input.form-control.input-lg(id ='newTask', type='text', name='name', value='')
+
+                                button.btn.btn-secondary.btn-sm(type='button', onclick="createTask(event)")
+                                    | create task
+                    .form-group
+                        div
+                            button.btn.btn-success(type='submit')
+                                | Add List
