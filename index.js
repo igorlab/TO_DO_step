@@ -6,6 +6,8 @@ import bodyParser from 'body-parser';
 import defaultRouter from './routes/default.js';
 import rout_todo from './routes/todo.js';
 import rout_notes from './routes/notes.js';
+import rout_apilist from './routes/apilist.js';
+import rout_lists from './routes/lists.js';
 
 const app = express();
 const config = dotenv.config().parsed;
@@ -39,6 +41,8 @@ try {
             app.use('/', defaultRouter());
             app.use('/api/notes', rout_todo());
             app.use('/notes', rout_notes());
+            app.use('/api/lists', rout_lists());
+            app.use('/lists', rout_apilist());
 
             app.listen(config.PORT, err => {
                 if (err) {

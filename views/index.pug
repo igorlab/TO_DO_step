@@ -3,6 +3,7 @@ head
     include static/bootstrap.pug
     include static/js.pug
     include create_todo.pug
+    include create_list.pug
 body
     include static/nav_bar.pug
     #container.col
@@ -15,8 +16,21 @@ body
                             h4.card-header=todoItem.Name
                             .card-body
                                 p.card-subtitle.mb-2.text-muted=todoItem.Text
-                                //a.card-link(href='#') Edit
-                                //a.card-link(id=todoItem._id.toString(), href='#', onclick="deleteToDo(event)") Delete
+                                a.card-link(href='#') Edit
+                                a.card-link(id=todoItem._id.toString(), href='#', onclick="deleteToDo(event)") Delete
+        p Your lists
+            block content
+                .row
+                    each listItem in lists
+                        div.col-md-6.col-xl-3.notes
+                            .card(onclick="openList(event)", data-id=listItem._id.toString() )
+                                h4.card-header=listItem.Name
+                                ul.list-group
+                                    each taskItem in listItem.Tasks
+                                        li.list-group-item.text-muted=taskItem.task
+                                .card-body
+                                    a.card-link(href='#') Edit
+                                    a.card-link(id=listItem._id.toString(), href='#', onclick="deleteList(event)") Delete
 
 
     include static/foot.pug
